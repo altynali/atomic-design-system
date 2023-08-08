@@ -1,0 +1,39 @@
+/*=============================================
+=            Foundation - colors              =
+=============================================*/
+
+/**
+ * This file defines the actual colors that will be used for styling. They will default to the palette
+ * we defined in the _variable.scss file. This is our default palette, and devs can override this
+ * with their own variables.
+ */
+
+/*=============================================
+=            Global text colors               =
+=============================================*/
+$body-text-color: var(--atds-body-text-color, $dark) !default;
+$body-bg-color: var(--atds-body-bg-color, $white) !default;
+
+/*=============================================
+=                 Buttons                     =
+=============================================*/
+$btn-primary-color: var(--atds-btn-primary-color, $white) !default;
+$btn-primary-bg: var(--atds-btn-primary-bg, $green) !default;
+$btn-primary-bg-hover: var(--atds-btn-primary-bg-hover, $green-light) !default;
+
+/*=============================================
+=                 Forms                       =
+=============================================*/
+$form-border-color: var(--atds-form-border-color, $white-dark) !default;
+$form-bg-color: var(--atds-form-bg-color, $white) !default;
+$form-bg-option-selected: var(--atds-form-bg-option-selected, $green) !default;
+$form-color-option-selected: var(
+  --atds-form-color-option-selected,
+  $white
+) !default;
+$form-bg-color-hover: var(--atds-form-bg-color-hover, $white-dark) !default;
+$form-color: var(--atds-form-color, $dark) !default;
+$form-bg: var(--atds-form-bg, $white) !default;
+$form-error-color: var(--atds-form-error-color, $red) !default;
+$form-error-border: var(--atds-form-error-border, $red) !default;
+$form-border-focus-color: var(--atds-form-border-focus-color, $green) !default;

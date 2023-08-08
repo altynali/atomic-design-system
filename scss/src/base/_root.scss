@@ -1,0 +1,34 @@
+:root {
+  --atds-body-text-color: #{$dark};
+  --atds-body-bg-color: #{$white};
+
+  --atds-btn-primary-color: #{$white};
+  --atds-btn-primary-bg: #{$green};
+  --atds-btn-primary-bg-hover: #{$green-light};
+
+  --atds-btn-secondary-color: #{$white};
+  --atds-btn-secondary-bg: #{$dark};
+
+  --atds-form-color: #{$dark};
+  --atds-form-bg: #{$white};
+  --atds-form-error-color: #{$red};
+  --atds-form-error-border: #{$red};
+  --atds-form-border-focus-color: #{$green};
+
+  --atds-body-font-size: #{$fs-base};
+  --atds-body-font-weight: #{$fw-normal};
+
+  --atds-h1-font-size: #{$h-1};
+  --atds-h2-font-size: #{$h-2};
+  --atds-h3-font-size: #{$h-3};
+  --atds-h4-font-size: #{$h-4};
+  --atds-h5-font-size: #{$h-5};
+  --atds-h6-font-size: #{$h-6};
+
+  --atds-h1-font-weight: #{$fw-medium};
+  --atds-h2-font-weight: #{$fw-medium};
+  --atds-h3-font-weight: #{$fw-medium};
+  --atds-h4-font-weight: #{$fw-normal};
+  --atds-h5-font-weight: #{$fw-normal};
+  --atds-h6-font-weight: #{$fw-light};
+}
