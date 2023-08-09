@@ -8,28 +8,28 @@
  * styles for components.
  *
  */
-
 @mixin tablet {
-  @media (min-width: map.get($breakpoints, "md")) {
+  @media (min-width: $breakpoints-md) {
     @content;
   }
 }
 
 @mixin laptop {
-  @media (min-width: map.get($breakpoints, "lg")) {
+  @media (min-width: $breakpoints-lg) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: map.get($breakpoints, "xl")) {
+  @media (min-width: $breakpoints-xl) {
     @content;
   }
 }
+// TODO: mixin
+// @mixin padding($space) {
+//   padding: map.get($spacing, $space);
+// }
 
-@mixin padding($space) {
-  padding: map.get($spacing, $space);
-}
-@mixin margin($space) {
-  margin: map.get($spacing, $space);
-}
+// @mixin margin($space) {
+//   margin: map.get($spacing, $space);
+// }
