@@ -1,0 +1,11 @@
+@import "foundation/all";
+
+@each $size, $value in $spacing {
+  .atds-width-#{$size} {
+    width: $value;
+  }
+
+  .atds-height-#{$size} {
+    height: $value;
+  }
+}
