@@ -1,5 +1,6 @@
 import { Color } from "./atoms/Color"
+import { Text } from "./atoms/Text"
 
-export { Color }
+export { Color, Text }
 
 // TODO: import * from './atoms';

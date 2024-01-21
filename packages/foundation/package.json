@@ -1,0 +1,11 @@
+{
+  "name": "atomic-design-system-foundation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev": "yarn build -w",
+    "test": "jest --verbose"
+  }
+}

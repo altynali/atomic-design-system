@@ -1,7 +1,11 @@
 import Ts from "rollup-plugin-typescript2"
 
 const config = {
-  input: ["src/index.ts", "src/atoms/Color/index.tsx"],
+  input: [
+    "src/index.ts",
+    "src/atoms/Color/index.tsx",
+    "src/atoms/Text/index.tsx",
+  ],
   output: [
     {
       dir: "lib",
@@ -11,7 +15,7 @@ const config = {
     },
   ],
   plugins: [Ts()],
-  external: ["react", "atomic-design-system-react"],
+  external: ["react", "atomic-ds-react"],
 }
 
 export default config
