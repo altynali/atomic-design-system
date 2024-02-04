@@ -5,6 +5,7 @@ const config = {
     "src/index.ts",
     "src/atoms/Color/index.tsx",
     "src/atoms/Text/index.tsx",
+    "src/atoms/Margin/index.ts",
   ],
   output: [
     {

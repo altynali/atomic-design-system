@@ -1,0 +1,23 @@
+@import "foundation/all";
+
+@each $size, $value in $spacing {
+  .atds-margin-#{$size} {
+    width: $value;
+  }
+
+  .atds-margin-left-#{$size} {
+    width: $value;
+  }
+
+  .atds-margin-right-#{$size} {
+    width: $value;
+  }
+
+  .atds-margin-top-#{$size} {
+    width: $value;
+  }
+
+  .atds-margin-bottom-#{$size} {
+    width: $value;
+  }
+}
