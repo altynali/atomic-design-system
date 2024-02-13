@@ -1,7 +1,7 @@
 import Spacing from "./Spacing"
-import FontSize from "./FontSize"
+import Sizes from "./Sizes"
 
 type SpacingType = keyof typeof Spacing
-type FontSizeType = keyof typeof FontSize
+type SizesType = keyof typeof Sizes
 
-export { SpacingType, FontSizeType }
+export { SpacingType, SizesType }

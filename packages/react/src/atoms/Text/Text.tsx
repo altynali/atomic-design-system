@@ -1,13 +1,13 @@
 import React, { FC, PropsWithChildren } from "react"
-import { FontSizeType } from "../../../../foundation/src/types"
-import FontSize from "../../../../foundation/src/FontSize"
+import { SizesType } from "../../../../foundation/src/types"
+import { Sizes } from "atomic-design-system-foundation"
 
 export type TextProps = {
-  size?: FontSizeType
+  size?: SizesType
 } & PropsWithChildren
 
 const Text: FC<TextProps> = (props) => {
-  const { size = FontSize.base, children } = props
+  const { size = Sizes.base, children } = props
 
   const className = `atds-text atds-text-${size}`
 

@@ -6,6 +6,8 @@ const config = {
     "src/atoms/Color/index.tsx",
     "src/atoms/Text/index.tsx",
     "src/atoms/Margin/index.ts",
+    "src/atoms/Button/index.tsx",
+    "src/molecules/Select/index.ts",
   ],
   output: [
     {
@@ -16,7 +18,7 @@ const config = {
     },
   ],
   plugins: [Ts()],
-  external: ["react", "atomic-ds-react"],
+  external: ["react", "atomic-design-system-foundation"],
 }
 
 export default config

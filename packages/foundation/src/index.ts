@@ -1,7 +1,7 @@
-import FontSize from './FontSize'
+import Sizes from './Sizes'
 import Spacing from './Spacing'
 
 export {
-    FontSize,
+    Sizes,
     Spacing
 }

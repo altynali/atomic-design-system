@@ -26,10 +26,10 @@
   }
 }
 // TODO: mixin
-// @mixin padding($space) {
-//   padding: map.get($spacing, $space);
-// }
+@mixin padding($space) {
+  padding: map-get($spacing, $space);
+}
 
-// @mixin margin($space) {
-//   margin: map.get($spacing, $space);
-// }
+@mixin margin($space) {
+  margin: map-get($spacing, $space);
+}
