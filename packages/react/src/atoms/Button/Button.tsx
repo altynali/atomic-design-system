@@ -3,10 +3,11 @@ import { SizesType } from "atomic-design-system-foundation/src/types"
 import React, { FC, PropsWithChildren } from "react"
 
 export type ColorProps = {
-  hexCode: string
+  hexCode?: string
   size?: SizesType
 } & PropsWithChildren
 
+//TODO: complete primary etc
 const Button: FC<ColorProps> = (props) => {
   const { size = Sizes.base, hexCode, children } = props
 

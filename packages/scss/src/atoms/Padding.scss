@@ -1,0 +1,23 @@
+@import "foundation/all";
+
+@each $size, $value in $spacing {
+  .atds-padding-#{$size} {
+    padding: $value;
+  }
+
+  .atds-padding-left-#{$size} {
+    padding: $value;
+  }
+
+  .atds-padding-right-#{$size} {
+    padding: $value;
+  }
+
+  .atds-padding-top-#{$size} {
+    padding: $value;
+  }
+
+  .atds-padding-bottom-#{$size} {
+    padding: $value;
+  }
+}

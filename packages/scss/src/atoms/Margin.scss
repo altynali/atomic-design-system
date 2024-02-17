@@ -2,6 +2,7 @@
 
 @each $size, $value in $spacing {
   .atds-margin-#{$size} {
+    //TODO: margin, nit width?
     width: $value;
   }
 

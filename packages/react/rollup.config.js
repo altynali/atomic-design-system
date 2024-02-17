@@ -7,6 +7,7 @@ const config = {
     "src/atoms/Text/index.tsx",
     "src/atoms/Margin/index.ts",
     "src/atoms/Button/index.tsx",
+    "src/atoms/Padding/index.ts",
     "src/molecules/Select/index.ts",
   ],
   output: [

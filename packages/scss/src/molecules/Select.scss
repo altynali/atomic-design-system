@@ -5,6 +5,7 @@
   flex-direction: column;
 
   position: relative;
+  box-sizing: border-box;
 
   &__label {
     display: flex;
@@ -16,7 +17,6 @@
     background: $form-bg-color;
 
     font-family: $body-font-family;
-
     cursor: pointer;
   }
 

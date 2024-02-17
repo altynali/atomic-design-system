@@ -23,6 +23,7 @@ export type SelectProps = {
 
 export type RenderOptionProps = {
   option: SelectOption
+  isSelected: boolean
   getOptionRecommendedProps: (overrideProps?: Object) => Object
 }
 
@@ -45,7 +46,7 @@ const Select: FC<SelectProps> = ({
   const [highlightedIndex, setHighlightedIndex] = useState<null | number>(null)
   const [overlayTop, setOverlayTop] = useState<number>(0)
   const [selectedOption, setSelectedOption] = useState<SelectOption | null>(
-    null,
+    null
   )
   const [optionRefs, setOptionRefs] = useState<
     React.RefObject<HTMLLIElement>[]
@@ -158,6 +159,7 @@ const Select: FC<SelectProps> = ({
 
             const renderOptionProps: RenderOptionProps = {
               option,
+              isSelected,
               getOptionRecommendedProps(overrideProps = {}) {
                 return {
                   ref,
@@ -222,7 +224,7 @@ export default Select
 
 const getPreviousOptionIndex = (
   currentIndex: number | null,
-  options: Array<SelectOption>,
+  options: Array<SelectOption>
 ) => {
   if (currentIndex === null) {
     return 0
@@ -237,7 +239,7 @@ const getPreviousOptionIndex = (
 
 const getNextOptionIndex = (
   currentIndex: number | null,
-  options: Array<SelectOption>,
+  options: Array<SelectOption>
 ) => {
   if (currentIndex === null) {
     return 0

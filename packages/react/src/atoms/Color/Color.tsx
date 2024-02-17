@@ -1,6 +1,5 @@
 import React, { FC } from "react"
 import { Spacing } from "atomic-design-system-foundation"
-// import Spacing from "../../../../foundation/src/Spacing"
 import { SpacingType } from "../../../../foundation/src/types"
 
 export type ColorProps = {
