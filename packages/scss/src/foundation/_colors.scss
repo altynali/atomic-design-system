@@ -22,6 +22,16 @@ $btn-primary-bg: var(--atds-btn-primary-bg, $green) !default;
 $btn-primary-bg-hover: var(--atds-btn-primary-bg-hover, $green-light) !default;
 
 /*=============================================
+=                 Checkbox                     =
+=============================================*/
+$checkbox-primary-color: var(--atds-btn-primary-color, $white) !default;
+$checkbox-primary-bg: var(--atds-btn-primary-bg, $green) !default;
+$checkbox-primary-bg-hover: var(
+  --atds-btn-primary-bg-hover,
+  $green-light
+) !default;
+
+/*=============================================
 =                 Forms                       =
 =============================================*/
 $form-border-color: var(--atds-form-border-color, $white-dark) !default;

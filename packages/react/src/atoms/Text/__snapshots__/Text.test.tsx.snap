@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text component snapshot of component 1`] = `
+<DocumentFragment>
+  <p
+    class="atds-text atds-text-base"
+  >
+    Hello World
+  </p>
+</DocumentFragment>
+`;

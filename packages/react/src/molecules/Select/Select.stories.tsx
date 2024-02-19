@@ -1,8 +1,5 @@
 import React from "react"
 import Select from "./Select"
-// import {  } from '@storybook/addon-a11y'
-
-// css
 import "atomic-design-system-scss/lib/Select.css"
 import "atomic-design-system-scss/lib/Text.css"
 
@@ -23,7 +20,6 @@ const options = [
 
 export default {
   title: "Molecules|Select",
-  // decorators: [withA11y]
 }
 
 export const Common = () => <Select options={options} />

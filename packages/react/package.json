@@ -30,7 +30,7 @@
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "dev": "yarn build --watch",
-    "test": "jest --verbose",
+    "test": "jest --verbose -u",
     "test:watch": "yarn test --watch",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

@@ -1,0 +1,117 @@
+@import "foundation/all";
+
+.input {
+  accent-color: $checkbox-primary-bg;
+  //   filter: sepia(52%) saturate(393%) hue-rotate(83deg) brightness(104%)
+  //     contrast(97%);
+  //   -webkit-filter: sepia(52%) saturate(393%) hue-rotate(83deg) brightness(104%)
+  //     contrast(97%);
+}
+// .input {
+//   margin: 0;
+//   padding: 0;
+//   cursor: pointer;
+//   font-size: 17px;
+//   visibility: hidden;
+
+//   &:after {
+//     content: " ";
+//     background-color: $checkbox-primary-bg;
+//     display: inline-block;
+//     color: $checkbox-primary-color;
+//     width: inherit;
+//     height: inherit;
+//     visibility: visible;
+//     border-radius: 5px;
+//   }
+
+//   &:checked:after {
+//     content: "\2714";
+//     transform: translateX(5px);
+//     font-weight: bold;
+//   }
+// }
+
+// .checkmark {
+//   position: absolute;
+//   left: 9px;
+//   top: 5px;
+
+//   &:after {
+//     content: "";
+//     position: absolute;
+//     display: none;
+//   }
+// }
+
+// input:checked ~ .checkmark {
+//   background-color: $checkbox-primary-bg;
+// }
+
+// .checkmark:after {
+//   display: block;
+// }
+
+// .container .checkmark:after {
+//   left: 9px;
+//   top: 5px;
+//   width: 5px;
+//   height: 10px;
+//   border: solid white;
+//   border-width: 0 3px 3px 0;
+//   -webkit-transform: rotate(45deg);
+//   -ms-transform: rotate(45deg);
+//   transform: rotate(45deg);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .checkmark {
+//   position: absolute;
+//   left: 9px;
+//   top: 5px;
+
+//   &:after {
+//     content: "";
+//     position: absolute;
+//     display: none;
+//   }
+// }
+
+// input:checked ~ .checkmark {
+//   background-color: $checkbox-primary-bg;
+// }
+
+// .container input:checked ~ .checkmark:after {
+//   display: block;
+// }
+
+// .container .checkmark:after {
+//   left: 9px;
+//   top: 5px;
+//   width: 5px;
+//   height: 10px;
+//   border: solid white;
+//   border-width: 0 3px 3px 0;
+//   -webkit-transform: rotate(45deg);
+//   -ms-transform: rotate(45deg);
+//   transform: rotate(45deg);
+// }

@@ -1,0 +1,20 @@
+@import "foundation/all";
+
+.atds-card {
+  @include padding("xs");
+  border: 1px solid $form-border-color;
+  background: $form-bg-color;
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+}
+
+@each $size, $value in $spacing {
+  .atds-min-width-#{$size} {
+    min-width: $value;
+  }
+
+  .atds-min-height-#{$size} {
+    min-height: $value;
+  }
+}

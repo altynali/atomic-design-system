@@ -3,12 +3,15 @@ import Ts from "rollup-plugin-typescript2"
 const config = {
   input: [
     "src/index.ts",
-    "src/atoms/Color/index.tsx",
-    "src/atoms/Text/index.tsx",
+    "src/atoms/Color/index.ts",
+    "src/atoms/Text/index.ts",
     "src/atoms/Margin/index.ts",
-    "src/atoms/Button/index.tsx",
+    "src/atoms/Button/index.ts",
     "src/atoms/Padding/index.ts",
+    "src/atoms/Checkbox/index.ts",
     "src/molecules/Select/index.ts",
+    "src/molecules/Input/index.ts",
+    "src/organisms/Form/index.ts",
   ],
   output: [
     {

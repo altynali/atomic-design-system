@@ -1,39 +1,9 @@
-import React, {
-  FC,
-  useState,
-  useEffect,
-  useRef,
-  KeyboardEventHandler,
-  createRef,
-} from "react"
+import React, { FC, useState, useEffect, useRef, createRef } from "react"
 import { Text } from "../../atoms/Text"
-// import Spacing from 'atomic-design-system-foundation'
-
-export interface SelectOption {
-  label: string
-  value: string
-}
-
-export type SelectProps = {
-  onOptionSelected?: (option: SelectOption, optionIndex: number) => void
-  options?: SelectOption[]
-  label?: string
-  renderOption?: (props: RenderOptionProps) => React.ReactNode
-}
-
-export type RenderOptionProps = {
-  option: SelectOption
-  isSelected: boolean
-  getOptionRecommendedProps: (overrideProps?: Object) => Object
-}
-
-export const KEYS = {
-  ENTER: "Enter",
-  SPACE: " ",
-  DOWN_ARROW: "ArrowDown",
-  ESC: "Escape",
-  UP_ARROW: "ArrowUp",
-}
+import { onButtonKeyDown, onOptionKeyDown } from "./utils"
+import CaretIcon from "./assets/CaretIcon"
+import ArrowIcon from "./assets/ArrowIcon"
+import { RenderOptionProps, SelectOption, SelectProps } from "./types"
 
 const Select: FC<SelectProps> = ({
   options = [],
@@ -86,35 +56,6 @@ const Select: FC<SelectProps> = ({
     setHighlightedIndex(optionIndex)
   }
 
-  const onButtonKeyDown: KeyboardEventHandler = (event) => {
-    event.preventDefault()
-
-    if ([KEYS.ENTER, KEYS.SPACE, KEYS.DOWN_ARROW].includes(event.key)) {
-      setIsOpen(true)
-      highlightOption(0)
-    }
-  }
-
-  const onOptionKeyDown: KeyboardEventHandler = (event) => {
-    if (event.key === KEYS.ESC) {
-      setIsOpen(false)
-
-      return
-    }
-
-    if (event.key === KEYS.DOWN_ARROW) {
-      highlightOption(getNextOptionIndex(highlightedIndex, options))
-    }
-
-    if (event.key === KEYS.UP_ARROW) {
-      highlightOption(getPreviousOptionIndex(highlightedIndex, options))
-    }
-
-    if (event.key === KEYS.ENTER) {
-      handleOptionSelected(options[highlightedIndex!], highlightedIndex!)
-    }
-  }
-
   return (
     <div className="atds-select">
       <button
@@ -125,24 +66,13 @@ const Select: FC<SelectProps> = ({
         className="atds-select__label"
         onClick={onLabelClicked}
         ref={labelRef}
-        onKeyDown={onButtonKeyDown}
+        onKeyDown={(event) =>
+          // @ts-ignore
+          onButtonKeyDown(event, setIsOpen, highlightOption)
+        }
       >
         <Text>{selectedOption ? selectedOption.label : label}</Text>
-        <svg
-          className={`atds-select__caret ${
-            isOpen ? "atds-select__caret--open" : "atds-select__caret--closed"
-          }`}
-          width="1rem"
-          height="1rem"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M19 9l-7 7-7-7" />
-        </svg>
+        <CaretIcon isOpen={isOpen} />
       </button>
 
       {isOpen ? (
@@ -166,7 +96,15 @@ const Select: FC<SelectProps> = ({
                   role: "menuitemradio",
                   "aria-label": option.label,
                   "aria-checked": isSelected ? true : undefined,
-                  onKeyDown: onOptionKeyDown,
+                  onKeyDown: (event: KeyboardEvent) =>
+                    onOptionKeyDown(
+                      event,
+                      setIsOpen,
+                      highlightOption,
+                      handleOptionSelected,
+                      options,
+                      highlightedIndex
+                    ),
                   tabIndex: isHighlighted ? -1 : 0,
                   onMouseEnter: () => highlightOption(index),
                   onMouseLeave: () => highlightOption(null),
@@ -196,21 +134,7 @@ const Select: FC<SelectProps> = ({
             return (
               <li {...renderOptionProps.getOptionRecommendedProps()}>
                 <Text>{option.label}</Text>
-
-                {isSelected ? (
-                  <svg
-                    width="1rem"
-                    height="1rem"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path d="M5 13l4 4L19 7" />
-                  </svg>
-                ) : null}
+                {isSelected ? <ArrowIcon /> : null}
               </li>
             )
           })}
@@ -221,33 +145,3 @@ const Select: FC<SelectProps> = ({
 }
 
 export default Select
-
-const getPreviousOptionIndex = (
-  currentIndex: number | null,
-  options: Array<SelectOption>
-) => {
-  if (currentIndex === null) {
-    return 0
-  }
-
-  if (currentIndex === 0) {
-    return options.length - 1
-  }
-
-  return currentIndex - 1
-}
-
-const getNextOptionIndex = (
-  currentIndex: number | null,
-  options: Array<SelectOption>
-) => {
-  if (currentIndex === null) {
-    return 0
-  }
-
-  if (currentIndex === options.length - 1) {
-    return 0
-  }
-
-  return currentIndex + 1
-}
