@@ -6,18 +6,18 @@
   }
 
   .atds-padding-left-#{$size} {
-    padding: $value;
+    padding-left: $value;
   }
 
   .atds-padding-right-#{$size} {
-    padding: $value;
+    padding-right: $value;
   }
 
   .atds-padding-top-#{$size} {
-    padding: $value;
+    padding-top: $value;
   }
 
   .atds-padding-bottom-#{$size} {
-    padding: $value;
+    padding-bottom: $value;
   }
 }

@@ -10,7 +10,7 @@
 
   font-family: $body-font-family;
   &__label {
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
   }
   &__input {
     @include padding("xs");

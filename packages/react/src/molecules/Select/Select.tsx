@@ -1,4 +1,12 @@
-import React, { FC, useState, useEffect, useRef, createRef } from "react"
+import React, {
+  FC,
+  useState,
+  useEffect,
+  useRef,
+  createRef,
+  KeyboardEvent,
+  MouseEvent,
+} from "react"
 import { Text } from "../../atoms/Text"
 import { onButtonKeyDown, onOptionKeyDown } from "./utils"
 import CaretIcon from "./assets/CaretIcon"
@@ -48,7 +56,8 @@ const Select: FC<SelectProps> = ({
     setIsOpen(false)
   }
 
-  const onLabelClicked = () => {
+  const onLabelClicked = (event: MouseEvent) => {
+    event.preventDefault()
     setIsOpen(!isOpen)
   }
 
@@ -64,10 +73,9 @@ const Select: FC<SelectProps> = ({
         aria-haspopup={true}
         aria-expanded={isOpen ? true : undefined}
         className="atds-select__label"
-        onClick={onLabelClicked}
+        onClick={(event: MouseEvent) => onLabelClicked(event)}
         ref={labelRef}
-        onKeyDown={(event) =>
-          // @ts-ignore
+        onKeyDown={(event: KeyboardEvent<HTMLButtonElement>) =>
           onButtonKeyDown(event, setIsOpen, highlightOption)
         }
       >

@@ -1,0 +1,16 @@
+@import "foundation/all";
+
+.atds-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  display: flex;
+  min-height: 56px;
+  -webkit-box-align: center;
+  align-items: center;
+  @include padding("md");
+  box-sizing: border-box;
+  border: 1px solid $form-border-color;
+  background: $form-bg-color;
+}

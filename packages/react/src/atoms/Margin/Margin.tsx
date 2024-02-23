@@ -1,9 +1,9 @@
+import { Spacing } from "atomic-design-system-foundation"
+import { SpacingType } from "atomic-design-system-foundation/src/types"
 import React, { FC, PropsWithChildren } from "react"
-import Spacing from "../../../../foundation/src/Spacing"
-// import Spacing from 'atomic-design-system-foundation'
 
 export type MarginProps = {
-  space?: keyof typeof Spacing
+  space?: SpacingType
   left?: boolean
   right?: boolean
   top?: boolean
@@ -11,7 +11,7 @@ export type MarginProps = {
 } & PropsWithChildren
 
 const Margin: FC<MarginProps> = ({
-  space = "xxxs",
+  space = Spacing.xxxs,
   children,
   left,
   right,

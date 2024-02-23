@@ -5,7 +5,7 @@ export interface SelectOption {
 
 export type SelectProps = {
   onOptionSelected?: (option: SelectOption, optionIndex: number) => void
-  options?: SelectOption[]
+  options: SelectOption[]
   label?: string
   renderOption?: (props: RenderOptionProps) => React.ReactNode
 }

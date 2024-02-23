@@ -1,9 +1,9 @@
 import React, { FC, PropsWithChildren } from "react"
 import Spacing from "atomic-design-system-foundation/src/Spacing"
-// import Spacing from 'atomic-design-system-foundation'
+import { SpacingType } from "atomic-design-system-foundation/src/types"
 
 export type PaddingProps = {
-  space?: keyof typeof Spacing
+  space?: SpacingType
   left?: boolean
   right?: boolean
   top?: boolean
@@ -11,7 +11,7 @@ export type PaddingProps = {
 } & PropsWithChildren
 
 const Padding: FC<PaddingProps> = ({
-  space = "xxxs",
+  space = Spacing.xxxs,
   children,
   left,
   right,

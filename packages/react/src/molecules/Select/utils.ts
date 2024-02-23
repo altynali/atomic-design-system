@@ -1,3 +1,4 @@
+import { KeyboardEvent } from "react"
 import { SelectOption } from "./types"
 
 export const KEYS = {
@@ -39,7 +40,7 @@ const getNextOptionIndex = (
 }
 
 export const onOptionKeyDown = (
-  event: KeyboardEvent,
+  event: KeyboardEvent<Element>,
   setIsOpen: (isOpen: boolean) => void,
   highlightOption: (highlightedOption: number) => void,
   handleOptionSelected: (option: SelectOption, index: number) => void,
@@ -66,8 +67,7 @@ export const onOptionKeyDown = (
 }
 
 export const onButtonKeyDown = (
-  // @ts-ignore
-  event,
+  event: KeyboardEvent<HTMLButtonElement>,
   setIsOpen: (isOpen: boolean) => void,
   highlightOption: (highlightedOption: number) => void
 ) => {

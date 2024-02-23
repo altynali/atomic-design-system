@@ -1,4 +1,6 @@
-const sizes = {
+import { SizesObjectType } from "./types"
+
+const sizes: SizesObjectType = {
   xs: "xs",
   sm: "sm",
   base: "base",

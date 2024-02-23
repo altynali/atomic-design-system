@@ -1,4 +1,6 @@
-const spaces = {
+import { SpacingObjectType } from "./types"
+
+const spaces: SpacingObjectType = {
   none: "none",
   xxxs: "xxxs",
   // 4px

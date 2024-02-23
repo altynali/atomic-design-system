@@ -1,52 +1,87 @@
-import React from "react"
+import React, { useState } from "react"
 import {
-  Color,
+  // Color,
   Select,
-  Text,
+  // Text,
+  Form,
+  Input,
+  Layout,
+  Padding,
+  CardList,
+  Grid,
+  Card,
   // Button,
   // Padding,
 } from "atomic-design-system-react"
-import "atomic-design-system-scss/lib/Utilities.css"
-import "atomic-design-system-scss/lib/Text.css"
-import "atomic-design-system-scss/lib/Checkbox.css"
-import "atomic-design-system-scss/lib/Select.css"
-import "atomic-design-system-scss/lib/Button.css"
-import "atomic-design-system-scss/lib/Padding.css"
+import "atomic-design-system-scss/lib/global.css"
 import { Spacing } from "atomic-design-system-foundation"
-import { Checkbox } from "atomic-design-system-react/src"
+import { options } from "./data"
+import { CardType, PrioritySelectOption } from "./types"
 
-const options = [
-  {
-    label: "Strict Black",
-    value: "strict-black",
-  },
-  {
-    label: "Heavenly Green",
-    value: "heavenly-green",
-  },
-  {
-    label: "Sweet Pink",
-    value: "pink",
-  },
-]
+const App = () => {
+  const [cards, setCards] = useState<CardType[]>([])
+  const [todoLabel, setTodoLabel] = useState<string>("")
+  const [priority, setPriority] = useState<string>("")
 
-export default function App() {
+  const handleTodoChange = (todo: string) => {
+    setTodoLabel(todo)
+  }
+
+  const handlePrioritySelected = (
+    option: PrioritySelectOption,
+    index: number
+  ) => {
+    setPriority(option.label)
+  }
+
+  const handleAddTodo = () => {
+    if (!todoLabel || !priority) return
+
+    const newTodo: CardType = {
+      label: todoLabel,
+      id: Date.now(),
+      priority,
+    }
+    setCards([...cards, newTodo])
+  }
+
   return (
-    <div>
-      <Color hexCode="#000" />
-      <Text size="xl">ekjnfdj</Text>
-      <Checkbox />
-      {/* <Button>ekjnfdj</Button> */}
-      {/* <Padding spacing={Spacing.xxxs}> */}
-      <Select
-        options={options}
-        // renderOption={({ option, getOptionRecommendedProps }) => (
-        //   <p {...getOptionRecommendedProps()}>
-        //     {option.label + "AAAAAAAA" + option.value}
-        //   </p>
-        // )}
-      ></Select>
-      {/* </Padding> */}
-    </div>
+    // Layout + padding = container
+    // <Suspense fallback={<div>Loading...</div>}>
+    <Layout>
+      <Padding bottom space={Spacing.sm}>
+        <Form label="Form Label" onSubmit={handleAddTodo}>
+          <Padding bottom space={Spacing.sm}>
+            <Input value={todoLabel} onHandleChange={handleTodoChange} />
+          </Padding>
+          <Padding bottom space={Spacing.sm}>
+            <Select
+              options={options}
+              onOptionSelected={handlePrioritySelected}
+            />
+          </Padding>
+        </Form>
+      </Padding>
+      <Grid>
+        {cards.map((card, index) => {
+          const { id, label, priority } = card
+          return (
+            <Card
+              key={card.id}
+              index={index}
+              label={label}
+              id={id}
+              description={"Priority:" + priority}
+              height={100}
+              width={200}
+              withCheckbox
+            />
+          )
+        })}
+      </Grid>
+    </Layout>
+    // </Suspense>
   )
 }
+
+export default App

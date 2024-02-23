@@ -5,16 +5,23 @@
   border: 1px solid $form-border-color;
   background: $form-bg-color;
   display: flex;
-  height: fit-content;
-  width: fit-content;
-}
-
-@each $size, $value in $spacing {
-  .atds-min-width-#{$size} {
-    min-width: $value;
+  // height: fit-content;
+  // width: fit-content;
+  &__content {
+    display: flex;
+    align-items: center;
   }
-
-  .atds-min-height-#{$size} {
-    min-height: $value;
+  &__checkbox {
+    @include margin("xs");
   }
 }
+
+// @each $size, $value in $spacing {
+//   .atds-min-width-#{$size} {
+//     min-width: $value;#
+//   }
+
+//   .atds-min-height-#{$size} {
+//     min-height: $value;
+//   }
+// }

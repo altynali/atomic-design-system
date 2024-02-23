@@ -3,6 +3,7 @@ import { SpacingType } from "atomic-design-system-foundation/src/types"
 import React, { FC, useState } from "react"
 
 export type CheckboxProps = {
+  className?: string
   hexCode?: string
   width?: SpacingType
   height?: SpacingType
@@ -10,9 +11,10 @@ export type CheckboxProps = {
 }
 
 const Checkbox: FC<CheckboxProps> = (props) => {
-  const { hexCode, height = Spacing.md, width = Spacing.md } = props
+  const { hexCode, height = Spacing.md, width = Spacing.md, className } = props
   const [checked, setChecked] = useState<boolean>(true)
-  const className = `atds-width-${width} atds-height-${height}`
+  const cls =
+    className + ` atds-checkbox-input atds-width-${width} atds-height-${height}`
 
   return (
     // <label
@@ -24,7 +26,7 @@ const Checkbox: FC<CheckboxProps> = (props) => {
       // id={name}
       type="checkbox"
       style={{ backgroundColor: hexCode }}
-      className={"input " + className}
+      className={cls}
       defaultChecked={checked}
       onChange={() => setChecked(!checked)}
     />

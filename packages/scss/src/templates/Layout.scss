@@ -1,0 +1,13 @@
+@import "foundation/all";
+
+.atds-layout {
+  height: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  &__content {
+    @include padding("md");
+  }
+}

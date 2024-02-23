@@ -2,23 +2,22 @@
 
 @each $size, $value in $spacing {
   .atds-margin-#{$size} {
-    //TODO: margin, nit width?
-    width: $value;
+    margin: $value;
   }
 
   .atds-margin-left-#{$size} {
-    width: $value;
+    margin-left: $value;
   }
 
   .atds-margin-right-#{$size} {
-    width: $value;
+    margin-right: $value;
   }
 
   .atds-margin-top-#{$size} {
-    width: $value;
+    margin-top: $value;
   }
 
   .atds-margin-bottom-#{$size} {
-    width: $value;
+    margin-bottom: $value;
   }
 }

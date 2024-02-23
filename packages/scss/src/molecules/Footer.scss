@@ -1,0 +1,11 @@
+.atds-footer {
+  width: 100%;
+  height: auto;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  @include padding("md");
+  box-sizing: border-box;
+  border: 1px solid $form-border-color;
+  background: $form-bg-color;
+}

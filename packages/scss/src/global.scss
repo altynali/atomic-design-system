@@ -26,3 +26,20 @@ body {
   font-size: $body-font-size;
   font-weight: $body-font-weight;
 }
+
+@import "foundation/all";
+@import "atoms/Button.scss";
+@import "atoms/Checkbox.scss";
+@import "atoms/Margin.scss";
+@import "atoms/Padding.scss";
+@import "atoms/Grid.scss";
+@import "atoms/Text.scss";
+@import "atoms/Utilities.scss";
+@import "molecules/Card.scss";
+@import "molecules/Header.scss";
+@import "molecules/Footer.scss";
+@import "molecules/Input.scss";
+@import "molecules/Select.scss";
+@import "organisms/Form.scss";
+@import "templates/Layout.scss";
+// 11

@@ -1,20 +1,41 @@
-import React, { FC } from "react"
-import { Input } from "../../molecules/Input"
-import { Select } from "../../molecules/Select"
+import React, { FC, PropsWithChildren, FormEvent } from "react"
 import { Button } from "../../atoms/Button"
+import { Text } from "../../atoms/Text"
+// import { Card } from "../../molecules/Card"
 
-export interface FormProps {
+export type FormProps = {
   className?: string
-}
+  label?: string
+  onSubmit?: () => void
+  // TODO: customButtons
+  // customButtons: ReactNode
+} & PropsWithChildren
 
 const Form: FC<FormProps> = (props) => {
-  //   const { className } = props
+  const { children, label, onSubmit } = props
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault()
+    onSubmit?.()
+  }
+
   return (
-    <div className={""}>
-      <Input /> 
-      <Select />
-      <Button>button</Button>
-    </div>
+    <form
+      className="atds-form"
+      onSubmit={(event: FormEvent) => handleSubmit(event)}
+    >
+      {/* <Card> */}
+      {label && (
+        <label>
+          {/* htmlFor={id} */}
+          <Text>{label}</Text>
+        </label>
+      )}
+      {children}
+      <Button type="submit">Submit button</Button>
+      {/* </Card> */}
+    </form>
   )
 }
+
 export default Form

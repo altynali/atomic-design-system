@@ -8,10 +8,14 @@ const config = {
     "src/atoms/Margin/index.ts",
     "src/atoms/Button/index.ts",
     "src/atoms/Padding/index.ts",
+    "src/atoms/Grid/index.ts",
     "src/atoms/Checkbox/index.ts",
+    "src/molecules/Card/index.ts",
     "src/molecules/Select/index.ts",
     "src/molecules/Input/index.ts",
+    "src/molecules/CardList/index.ts",
     "src/organisms/Form/index.ts",
+    "src/templates/Layout/index.ts",
   ],
   output: [
     {
