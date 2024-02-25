@@ -21,14 +21,14 @@ const Layout: FC<LayoutProps> = (props) => {
 
   return (
     <div className={classNames(className, ["atds-layout"])}>
-      {!noHeader && <Header />}
+      {!noHeader && <Header leftText="Logo" rightText="Header" />}
       <div className="atds-layout__content">
         <main>
           <h1>{label}</h1>
           {children}
         </main>
       </div>
-      {!noFooter && <Footer />}
+      {!noFooter && <Footer leftText="Footer" rightText="2024" />}
     </div>
   )
 }

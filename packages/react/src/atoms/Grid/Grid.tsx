@@ -8,12 +8,12 @@ export type GridProps = {
 } & PropsWithChildren
 
 const Grid: FC<GridProps> = (props) => {
-  const { columns, gap = 3, className = "", children } = props
+  const { columns = 0, gap = 3, className = "", children } = props
 
   return (
     <div
       className={classNames(className, [
-        columns !== 0 || undefined ? "atds-grid-with-flex" : "atds-grid",
+        columns === 0 || undefined ? "atds-grid-with-flex" : "atds-grid",
       ])}
       style={{
         gridTemplateColumns: `repeat(${columns}, 1fr)`,

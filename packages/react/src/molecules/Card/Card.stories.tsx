@@ -6,4 +6,16 @@ export default {
   title: "Atoms|Card",
 }
 
-export const Common = () => <Card id={1}/>
+export const Common = () => (
+  <Card id={1} label="Label" description="Description" />
+)
+
+export const CustomDimensions = () => (
+  <Card
+    id={1}
+    label="Label"
+    description="Description"
+    width={200}
+    height={200}
+  />
+)
