@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "yarn build -w",
     "test": "jest --verbose"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
