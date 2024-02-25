@@ -12,7 +12,7 @@ const Header: FC<HeaderProps> = (props) => {
   const { className = "", leftText = "Logo", rightText = "Header" } = props
 
   return (
-    <header className={classNames(className, ["atds-footer"])}>
+    <header className={classNames(className, ["atds-header"])}>
       <Text>{leftText}</Text>
       <Text>{rightText}</Text>
     </header>

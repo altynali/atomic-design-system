@@ -23,6 +23,7 @@ const compile = (inputPath, outputPath) => {
   const result = Sass.renderSync({
     data: Fs.readFileSync(Path.resolve(inputPath)).toString(),
     outputStyle: "expanded",
+    // outputStyle: "compressed",
     includePaths: [Path.resolve("src")],
   })
 

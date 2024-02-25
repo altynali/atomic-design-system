@@ -57,7 +57,6 @@ h6 {
   font-weight: $h-6-font-weight;
 }
 
-@import "foundation/all";
 @import "atoms/Button.scss";
 @import "atoms/Checkbox.scss";
 @import "atoms/Margin.scss";
@@ -72,4 +71,3 @@ h6 {
 @import "molecules/Select.scss";
 @import "organisms/Form.scss";
 @import "templates/Layout.scss";
-// 11

@@ -1,7 +1,8 @@
-import React, { FC, PropsWithChildren } from "react"
+import React, { FC, PropsWithChildren, Suspense } from "react"
 import { Header } from "../../molecules/Header"
 import { Footer } from "../../molecules/Footer"
 import { classNames } from "../../utils"
+import { Text } from "../../atoms/Text"
 
 export type LayoutProps = {
   className?: string
@@ -20,16 +21,18 @@ const Layout: FC<LayoutProps> = (props) => {
   } = props
 
   return (
-    <div className={classNames(className, ["atds-layout"])}>
-      {!noHeader && <Header leftText="Logo" rightText="Header" />}
-      <div className="atds-layout__content">
-        <main>
-          <h1>{label}</h1>
-          {children}
-        </main>
+    <Suspense fallback={<Text>Loading...</Text>}>
+      <div className={classNames(className, ["atds-layout"])}>
+        {!noHeader && <Header leftText="Logo" rightText="Header" />}
+        <div className="atds-layout__content">
+          <main>
+            <h1>{label}</h1>
+            {children}
+          </main>
+        </div>
+        {!noFooter && <Footer leftText="Footer" rightText="2024" />}
       </div>
-      {!noFooter && <Footer leftText="Footer" rightText="2024" />}
-    </div>
+    </Suspense>
   )
 }
 

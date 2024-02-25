@@ -1,4 +1,5 @@
 import Ts from "rollup-plugin-typescript2"
+// import terser from "@rollup/plugin-terser"
 
 const config = {
   input: [
@@ -24,8 +25,8 @@ const config = {
       preserveModules: true,
     },
   ],
-  plugins: [Ts()],
-  external: ["react", "atomic-design-system-foundation"],
+  plugins: [Ts()], // terser()
+  external: ["react"],
 }
 
 export default config

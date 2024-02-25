@@ -1,17 +1,12 @@
 import React, { useState } from "react"
 import {
-  // Color,
   Select,
-  // Text,
   Form,
   Input,
   Layout,
   Padding,
-  CardList,
   Grid,
   Card,
-  // Button,
-  // Padding,
 } from "atomic-design-system-react"
 import "atomic-design-system-scss/lib/global.css"
 import { Spacing } from "atomic-design-system-foundation"
@@ -46,8 +41,6 @@ const App = () => {
   }
 
   return (
-    // Layout + padding = container
-    // <Suspense fallback={<div>Loading...</div>}>
     <Layout>
       <Padding bottom space={Spacing.sm}>
         <Form label="Add Todo" onSubmit={handleAddTodo}>
@@ -80,7 +73,6 @@ const App = () => {
         })}
       </Grid>
     </Layout>
-    // </Suspense>
   )
 }
 
