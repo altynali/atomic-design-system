@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import { Spacing } from "atomic-design-system-foundation"
+import { Spacing } from "atomic-design-system-foundation/lib/src"
 import { SpacingType } from "../../../../foundation/src/types"
 import { classNames } from "../../utils"
 

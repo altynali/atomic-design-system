@@ -1,5 +1,5 @@
-import { Sizes } from "atomic-design-system-foundation"
-import { SizesType } from "atomic-design-system-foundation/src/types"
+import { Sizes } from "atomic-design-system-foundation/lib/src"
+import { SizesType } from "atomic-design-system-foundation/lib/src/types"
 import React, { ButtonHTMLAttributes, FC, PropsWithChildren } from "react"
 import { classNames } from "../../utils"
 

@@ -1,7 +1,7 @@
 import React from "react"
 import Color from "./Color"
 import "atomic-design-system-scss/lib/Utilities.css"
-import { Spacing } from "atomic-design-system-foundation"
+import { Spacing } from "atomic-design-system-foundation/lib/src"
 
 export default {
   title: "Atoms|Color",

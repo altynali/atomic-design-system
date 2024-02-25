@@ -9,7 +9,7 @@ import "atomic-design-system-scss/lib/Padding.css"
 import { Input } from "../../molecules/Input"
 import { Select } from "../../molecules/Select"
 import { Padding } from "../../atoms/Padding"
-import { Spacing } from "atomic-design-system-foundation"
+import { Spacing } from "atomic-design-system-foundation/lib/src"
 
 export default {
   title: "Organisms|Form",

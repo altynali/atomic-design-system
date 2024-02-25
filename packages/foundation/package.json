@@ -1,10 +1,10 @@
 {
   "name": "atomic-design-system-foundation",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "files": [
-    "lib"
+    "lib/src"
   ],
   "scripts": {
     "build": "tsc",

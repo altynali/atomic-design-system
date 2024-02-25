@@ -1,10 +1,10 @@
 {
   "name": "atomic-design-system-scss",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "files": [
-    "lib"
+    "lib/src"
   ],
   "dependencies": {
     "husky": "^8.0.3",

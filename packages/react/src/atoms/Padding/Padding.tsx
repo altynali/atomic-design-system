@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren } from "react"
-import Spacing from "atomic-design-system-foundation/src/Spacing"
-import { SpacingType } from "atomic-design-system-foundation/src/types"
+import { Spacing } from "atomic-design-system-foundation/lib/src"
+import { SpacingType } from "atomic-design-system-foundation/lib/src/types"
 
 export type PaddingProps = {
   space?: SpacingType

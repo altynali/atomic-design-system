@@ -6,7 +6,7 @@ import React, {
 } from "react"
 import { Text } from "../../atoms/Text"
 import { Margin } from "../../atoms/Margin"
-import { Spacing } from "atomic-design-system-foundation"
+import { Spacing } from "atomic-design-system-foundation/lib/src"
 import { classNames } from "../../utils"
 // import "./Input.scss"
 

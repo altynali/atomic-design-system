@@ -11,7 +11,7 @@ import { Form } from "../../organisms/Form"
 import { Input } from "../../molecules/Input"
 import { Select } from "../../molecules/Select"
 import { Padding } from "../../atoms/Padding"
-import { Spacing } from "atomic-design-system-foundation"
+import { Spacing } from "atomic-design-system-foundation/lib/src"
 
 export default {
   title: "Templates|Layout",

@@ -1,5 +1,5 @@
-import { Spacing } from "atomic-design-system-foundation"
-import { SpacingType } from "atomic-design-system-foundation/src/types"
+import { Spacing } from "atomic-design-system-foundation/lib/src"
+import { SpacingType } from "atomic-design-system-foundation/lib/src/types"
 import React, { FC, useState } from "react"
 import { classNames } from "../../utils"
 

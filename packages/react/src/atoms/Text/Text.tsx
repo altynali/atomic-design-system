@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren } from "react"
 import { SizesType } from "../../../../foundation/src/types"
-import { Sizes } from "atomic-design-system-foundation"
+import { Sizes } from "atomic-design-system-foundation/lib/src"
 
 export type TextProps = {
   className?: string

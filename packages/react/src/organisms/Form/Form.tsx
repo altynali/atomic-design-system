@@ -2,7 +2,7 @@ import React, { FC, PropsWithChildren, FormEvent } from "react"
 import { Button } from "../../atoms/Button"
 import { Text } from "../../atoms/Text"
 import { Padding } from "../../atoms/Padding"
-import { Spacing } from "atomic-design-system-foundation"
+import { Spacing } from "atomic-design-system-foundation/lib/src"
 import { classNames } from "../../utils"
 
 export type FormProps = {

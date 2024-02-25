@@ -9,7 +9,7 @@ import {
   Card,
 } from "atomic-design-system-react"
 import "atomic-design-system-scss/lib/global.css"
-import { Spacing } from "atomic-design-system-foundation"
+import { Spacing } from "atomic-design-system-foundation/lib/src"
 import { options } from "./data"
 import { CardType, PrioritySelectOption } from "./types"
 

@@ -1,7 +1,7 @@
 import React from "react"
 import { render } from "@testing-library/react"
 import Text from "./Text"
-import { Sizes } from "atomic-design-system-foundation"
+import { Sizes } from "atomic-design-system-foundation/lib/src"
 import "@testing-library/jest-dom"
 
 describe("Text component", () => {
