@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component snapshot of the base state 1`] = `
+<DocumentFragment>
+  <form
+    aria-label="form-undefined"
+    class=" atds-form"
+    data-testid="AtdsForm"
+  >
+    <button
+      class=" atds-button-container atds-button-base"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</DocumentFragment>
+`;

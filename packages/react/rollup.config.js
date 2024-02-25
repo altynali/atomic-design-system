@@ -13,7 +13,6 @@ const config = {
     "src/molecules/Card/index.ts",
     "src/molecules/Select/index.ts",
     "src/molecules/Input/index.ts",
-    "src/molecules/CardList/index.ts",
     "src/organisms/Form/index.ts",
     "src/templates/Layout/index.ts",
   ],

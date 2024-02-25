@@ -11,9 +11,19 @@ import { Text } from "../../atoms/Text"
 import { onButtonKeyDown, onOptionKeyDown } from "./utils"
 import CaretIcon from "./assets/CaretIcon"
 import ArrowIcon from "./assets/ArrowIcon"
-import { RenderOptionProps, SelectOption, SelectProps } from "./types"
+import { RenderOptionProps, SelectOption } from "./types"
+import { classNames } from "../../utils"
+
+export type SelectProps = {
+  className?: string
+  onOptionSelected?: (option: SelectOption, optionIndex: number) => void
+  options: SelectOption[]
+  label?: string
+  renderOption?: (props: RenderOptionProps) => React.ReactNode
+}
 
 const Select: FC<SelectProps> = ({
+  className = "",
   options = [],
   label = "Please select an option ...",
   onOptionSelected,
@@ -66,7 +76,7 @@ const Select: FC<SelectProps> = ({
   }
 
   return (
-    <div className="atds-select">
+    <div className={classNames(className, ["atds-select"])}>
       <button
         data-testid="AtdsSelectButton"
         aria-controls="atds-select-list"
@@ -83,40 +93,42 @@ const Select: FC<SelectProps> = ({
         <CaretIcon isOpen={isOpen} />
       </button>
 
-      {isOpen ? (
-        <ul
-          role="menu"
-          style={{ top: overlayTop }}
-          className="atds-select__overlay"
-        >
-          {options.map((option, index) => {
-            const { value } = option
-            const isSelected = selectedOption?.value === value
-            const isHighlighted = highlightedIndex === index
-            const ref = optionRefs[index]
+      <ul
+        role="menu"
+        style={{ top: overlayTop }}
+        className={`atds-select__overlay ${
+          isOpen ? "atds-select__overlay--open" : ""
+        }`}
+        id="atds-select-list"
+      >
+        {options.map((option, index) => {
+          const { value } = option
+          const isSelected = selectedOption?.value === value
+          const isHighlighted = highlightedIndex === index
+          const ref = optionRefs[index]
 
-            const renderOptionProps: RenderOptionProps = {
-              option,
-              isSelected,
-              getOptionRecommendedProps(overrideProps = {}) {
-                return {
-                  ref,
-                  role: "menuitemradio",
-                  "aria-label": option.label,
-                  "aria-checked": isSelected ? true : undefined,
-                  onKeyDown: (event: KeyboardEvent) =>
-                    onOptionKeyDown(
-                      event,
-                      setIsOpen,
-                      highlightOption,
-                      handleOptionSelected,
-                      options,
-                      highlightedIndex
-                    ),
-                  tabIndex: isHighlighted ? -1 : 0,
-                  onMouseEnter: () => highlightOption(index),
-                  onMouseLeave: () => highlightOption(null),
-                  className: `atds-select__option
+          const renderOptionProps: RenderOptionProps = {
+            option,
+            isSelected,
+            getOptionRecommendedProps(overrideProps = {}) {
+              return {
+                ref,
+                role: "menuitemradio",
+                "aria-label": option.label,
+                "aria-checked": isSelected ? true : false,
+                onKeyDown: (event: KeyboardEvent) =>
+                  onOptionKeyDown(
+                    event,
+                    setIsOpen,
+                    highlightOption,
+                    handleOptionSelected,
+                    options,
+                    highlightedIndex
+                  ),
+                tabIndex: isHighlighted ? -1 : 0,
+                onMouseEnter: () => highlightOption(index),
+                onMouseLeave: () => highlightOption(null),
+                className: `atds-select__option
                                 ${
                                   isSelected
                                     ? "atds-select__option--selected"
@@ -128,26 +140,25 @@ const Select: FC<SelectProps> = ({
                                     : ""
                                 }
                             `,
-                  key: option.value,
-                  onClick: () => handleOptionSelected(option, index),
-                  ...overrideProps,
-                }
-              },
-            }
+                key: option.value,
+                onClick: () => handleOptionSelected(option, index),
+                ...overrideProps,
+              }
+            },
+          }
 
-            if (renderOption) {
-              return renderOption(renderOptionProps)
-            }
+          if (renderOption) {
+            return renderOption(renderOptionProps)
+          }
 
-            return (
-              <li {...renderOptionProps.getOptionRecommendedProps()}>
-                <Text>{option.label}</Text>
-                {isSelected ? <ArrowIcon /> : null}
-              </li>
-            )
-          })}
-        </ul>
-      ) : null}
+          return (
+            <li {...renderOptionProps.getOptionRecommendedProps()}>
+              <Text>{option.label}</Text>
+              {isSelected ? <ArrowIcon /> : null}
+            </li>
+          )
+        })}
+      </ul>
     </div>
   )
 }

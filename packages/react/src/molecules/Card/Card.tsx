@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren } from "react"
 import { Text } from "../../atoms/Text"
-import { widthOrHeightToPixel } from "./../../utils"
+import { classNames, widthOrHeightToPixel } from "./../../utils"
 import { Checkbox } from "../../atoms/Checkbox"
 
 export type CardType = {
@@ -20,13 +20,19 @@ export type CardProps = {
 
 // TODO: card molecule or atom
 const Card: FC<CardProps> = (props) => {
-  const { children, label, description, height, width, withCheckbox } = props
-
-  const className = `atds-card`
+  const {
+    children,
+    label,
+    description,
+    height,
+    width,
+    withCheckbox,
+    className = "",
+  } = props
 
   return (
     <div
-      className={className}
+      className={classNames(className, ["atds-card"])}
       style={{
         height: widthOrHeightToPixel(height),
         width: widthOrHeightToPixel(width),

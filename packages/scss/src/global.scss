@@ -27,6 +27,36 @@ body {
   font-weight: $body-font-weight;
 }
 
+h1 {
+  font-size: $h-1-font-size;
+  font-weight: $h-1-font-weight;
+}
+
+h2 {
+  font-size: $h-2-font-size;
+  font-weight: $h-2-font-weight;
+}
+
+h3 {
+  font-size: $h-3-font-size;
+  font-weight: $h-3-font-weight;
+}
+
+h4 {
+  font-size: $h-4-font-size;
+  font-weight: $h-4-font-weight;
+}
+
+h5 {
+  font-size: $h-5-font-size;
+  font-weight: $h-5-font-weight;
+}
+
+h6 {
+  font-size: $h-6-font-size;
+  font-weight: $h-6-font-weight;
+}
+
 @import "foundation/all";
 @import "atoms/Button.scss";
 @import "atoms/Checkbox.scss";

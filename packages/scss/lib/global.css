@@ -581,7 +581,7 @@ template {
 :root {
   --atds-body-text-color: #1d1f22;
   --atds-body-bg-color: #fff;
-  --atds-btn-primary-color: #fff;
+  --atds-btn-primary-color: #000;
   --atds-btn-primary-bg: #5ece7b;
   --atds-btn-primary-bg-hover: #9ee2b0;
   --atds-btn-secondary-color: #fff;
@@ -611,6 +611,36 @@ body {
   font-family: var(--atds-body-font-family, "Playfair Display", serif);
   font-size: var(--atds-body-font-size, 0.875rem);
   font-weight: var(--atds-body-font-weight, 400);
+}
+
+h1 {
+  font-size: var(--atds-h1-font-size, 1.375rem);
+  font-weight: var(--atds-h1-text-weight, 900);
+}
+
+h2 {
+  font-size: var(--atds-h2-font-size, 1.375rem);
+  font-weight: var(--atds-h2-text-weight, 600);
+}
+
+h3 {
+  font-size: var(--atds-h3-font-size, 1rem);
+  font-weight: var(--atds-h3-text-weight, 700);
+}
+
+h4 {
+  font-size: var(--atds-h4-font-size, 1.125rem);
+  font-weight: var(--atds-h4-text-weight, 500);
+}
+
+h5 {
+  font-size: var(--atds-h5-font-size, 0.75rem);
+  font-weight: var(--atds-h5-text-weight, 400);
+}
+
+h6 {
+  font-size: var(--atds-h6-font-size, 0.75rem);
+  font-weight: var(--atds-h6-text-weight, 300);
 }
 
 /*=============================================
@@ -823,7 +853,7 @@ body {
  */
 .atds-button-container {
   background: var(--atds-btn-primary-bg, #5ece7b);
-  color: var(--atds-btn-primary-color, #fff);
+  color: var(--atds-btn-primary-color, #000);
   border: none;
   cursor: pointer;
   width: fit-content;
@@ -2502,6 +2532,7 @@ body {
   border: 1px solid var(--atds-form-border-color, #a4a4a4);
   background-color: var(--atds-form-bg-color, #fff);
   z-index: 99;
+  display: none;
   list-style-type: none;
   box-shadow: 0 4px 11px rgba(157, 157, 157, 0.21);
   position: absolute;
@@ -2525,6 +2556,10 @@ body {
 .atds-select__option--selected {
   background-color: var(--atds-form-bg-option-selected, #5ece7b);
   color: var(--atds-form-color-option-selected, #fff);
+}
+
+.atds-select__overlay--open {
+  display: block;
 }
 
 /*=============================================

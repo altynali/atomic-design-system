@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout component snapshot of the base state 1`] = `
+<DocumentFragment>
+  <div
+    class=" atds-layout"
+  >
+    <header
+      class=" atds-footer"
+    >
+      <p
+        class="undefined atds-text atds-text-base"
+      >
+        Logo
+      </p>
+      <p
+        class="undefined atds-text atds-text-base"
+      >
+        Header
+      </p>
+    </header>
+    <div
+      class="atds-layout__content"
+    >
+      <main>
+        <h1>
+          Todo App
+        </h1>
+      </main>
+    </div>
+    <footer
+      class=" atds-footer"
+    >
+      <p
+        class="undefined atds-text atds-text-base"
+      >
+        Footer
+      </p>
+      <p
+        class="undefined atds-text atds-text-base"
+      >
+        2024
+      </p>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

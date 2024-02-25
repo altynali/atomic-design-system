@@ -3,7 +3,7 @@
 exports[`Text component snapshot of component 1`] = `
 <DocumentFragment>
   <p
-    class="atds-text atds-text-base"
+    class="undefined atds-text atds-text-base"
   >
     Hello World
   </p>

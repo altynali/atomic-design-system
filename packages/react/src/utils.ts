@@ -8,3 +8,9 @@ export const widthOrHeightToPixel = (number: number | undefined) => {
   }
   return "fit-content"
 }
+
+export const classNames = (cls: string, additional: string[] = []): string => {
+  const classes = [cls, ...additional?.filter(Boolean)]
+
+  return classes.join(" ")
+}

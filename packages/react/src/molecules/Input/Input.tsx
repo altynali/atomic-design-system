@@ -6,6 +6,8 @@ import React, {
 } from "react"
 import { Text } from "../../atoms/Text"
 import { Margin } from "../../atoms/Margin"
+import { Spacing } from "atomic-design-system-foundation"
+import { classNames } from "../../utils"
 // import "./Input.scss"
 
 type TInput = InputHTMLAttributes<HTMLInputElement> & {
@@ -20,6 +22,7 @@ const Input = forwardRef<HTMLInputElement, TInput>((props, ref) => {
     label = "Label",
     id,
     placeholder = "Placeholder",
+    className = "",
     ...rest
   } = props
 
@@ -32,9 +35,9 @@ const Input = forwardRef<HTMLInputElement, TInput>((props, ref) => {
   }
 
   return (
-    <div className="atds-input">
+    <div className={classNames(className, ["atds-input"])}>
       {label && (
-        <Margin bottom>
+        <Margin bottom space={Spacing.sm}>
           <label htmlFor={id} className="atds-input__label">
             <Text>{label}</Text>
           </label>
@@ -48,30 +51,9 @@ const Input = forwardRef<HTMLInputElement, TInput>((props, ref) => {
         value={myValue}
         className="atds-input__input"
         placeholder={placeholder}
-        //   className={cn(
-        //     "border-2 border-primary bg-red transition h-12 px-5 rounded-md focus:outline-none w-full text-black text-lg",
-        //     className
-        //   )}
         {...rest}
       />
     </div>
-    // <div className="atds-input">
-    // <button
-    // data-testid="AtdsInputButton"
-    // aria-controls="atds-input-list"
-    // aria-haspopup={true}
-    // aria-expanded={isOpen ? true : undefined}
-    // className="atds-input__label"
-    // onChange={onLabelClicked}
-    // ref={ref}
-    // onKeyDown={(event) =>
-    // @ts-ignore
-    // onButtonKeyDown(event, setIsOpen, highlightOption)
-    // }
-    // >
-    // <Text>{label}</Text>
-    // </button>
-    // </div>
   )
 })
 

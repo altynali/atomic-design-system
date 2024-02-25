@@ -1,21 +1,33 @@
 import React, { FC, PropsWithChildren } from "react"
 import { Header } from "../../molecules/Header"
 import { Footer } from "../../molecules/Footer"
+import { classNames } from "../../utils"
 
 export type LayoutProps = {
   className?: string
   noHeader?: boolean
   noFooter?: boolean
+  label?: string
 } & PropsWithChildren
-// TODO: add className to components
 
 const Layout: FC<LayoutProps> = (props) => {
-  const { children, noHeader = false, noFooter = false } = props
+  const {
+    children,
+    noHeader = false,
+    noFooter = false,
+    label = "Todo App",
+    className = "",
+  } = props
 
   return (
-    <div className="atds-layout">
+    <div className={classNames(className, ["atds-layout"])}>
       {!noHeader && <Header />}
-      <div className="atds-layout__content">{children}</div>
+      <div className="atds-layout__content">
+        <main>
+          <h1>{label}</h1>
+          {children}
+        </main>
+      </div>
       {!noFooter && <Footer />}
     </div>
   )

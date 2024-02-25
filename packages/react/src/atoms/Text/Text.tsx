@@ -3,15 +3,16 @@ import { SizesType } from "../../../../foundation/src/types"
 import { Sizes } from "atomic-design-system-foundation"
 
 export type TextProps = {
+  className?: string
   size?: SizesType
 } & PropsWithChildren
 
 const Text: FC<TextProps> = (props) => {
-  const { size = Sizes.base, children } = props
+  const { size = Sizes.base, children, className } = props
 
-  const className = `atds-text atds-text-${size}`
+  const cls = className + ` atds-text atds-text-${size}`
 
-  return <p className={className}>{children}</p>
+  return <p className={cls}>{children}</p>
 }
 
 export default Text

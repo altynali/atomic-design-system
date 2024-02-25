@@ -50,7 +50,7 @@ const App = () => {
     // <Suspense fallback={<div>Loading...</div>}>
     <Layout>
       <Padding bottom space={Spacing.sm}>
-        <Form label="Form Label" onSubmit={handleAddTodo}>
+        <Form label="Add Todo" onSubmit={handleAddTodo}>
           <Padding bottom space={Spacing.sm}>
             <Input value={todoLabel} onHandleChange={handleTodoChange} />
           </Padding>
