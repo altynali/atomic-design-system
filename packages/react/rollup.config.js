@@ -1,5 +1,5 @@
 import Ts from "rollup-plugin-typescript2"
-// import terser from "@rollup/plugin-terser"
+import terser from "@rollup/plugin-terser"
 
 const config = {
   input: [
@@ -25,7 +25,7 @@ const config = {
       preserveModules: true,
     },
   ],
-  plugins: [Ts()], // terser()
+  plugins: [Ts(), terser()],
   external: ["react"],
 }
 

@@ -1,10 +1,11 @@
 {
   "name": "atomic-design-system-react",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "main": "lib/index.js",
   "license": "MIT",
   "files": [
-    "lib/react/src"
+    "lib/react/src",
+    "lib/foundation/src"
   ],
   "devDependencies": {
     "@babel/preset-env": "^7.23.9",
