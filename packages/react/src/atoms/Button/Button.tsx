@@ -1,12 +1,11 @@
 import { Sizes } from "atomic-design-system-foundation/lib/src"
-import { SizesType } from "atomic-design-system-foundation/lib/src/types"
 import React, { ButtonHTMLAttributes, FC, PropsWithChildren } from "react"
 import { classNames } from "../../utils"
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string
   hexCode?: string
-  size?: SizesType
+  size?: string
 } & PropsWithChildren
 
 //TODO: complete primary etc

@@ -1,13 +1,12 @@
 import { Spacing } from "atomic-design-system-foundation/lib/src"
-import { SpacingType } from "atomic-design-system-foundation/lib/src/types"
 import React, { FC, useState } from "react"
 import { classNames } from "../../utils"
 
 export type CheckboxProps = {
   className?: string
   hexCode?: string
-  width?: SpacingType
-  height?: SpacingType
+  width?: string
+  height?: string
   name?: string
 }
 

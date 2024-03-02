@@ -1,22 +1,16 @@
 import React, { FC } from "react"
-import { Spacing } from "atomic-design-system-foundation/lib/src"
-import { SpacingType } from "../../../../foundation/src/types"
+// import { Spacing } from "atomic-design-system-foundation/lib/src"
 import { classNames } from "../../utils"
 
 export type ColorProps = {
   className?: string
   hexCode: string
-  width?: SpacingType
-  height?: SpacingType
+  width?: string
+  height?: string
 }
 
 const Color: FC<ColorProps> = (props) => {
-  const {
-    hexCode,
-    height = Spacing.sm,
-    width = Spacing.sm,
-    className = "",
-  } = props
+  const { hexCode, height, width, className = "" } = props
 
   return (
     <div

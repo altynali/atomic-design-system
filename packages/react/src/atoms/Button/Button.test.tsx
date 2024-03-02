@@ -1,7 +1,7 @@
 import React from "react"
 import { render, fireEvent } from "@testing-library/react"
 import Button from "./Button"
-import { Sizes } from "atomic-design-system-foundation/lib/src"
+import { Sizes } from "atomic-design-system-foundation/lib/src/src"
 import "@testing-library/jest-dom"
 
 describe("Button component", () => {

@@ -1,7 +1,4 @@
-import Sizes from './Sizes'
-import Spacing from './Spacing'
+import Sizes from "./Sizes"
+import Spacing from "./Spacing"
 
-export {
-    Sizes,
-    Spacing
-}
+export { Sizes, Spacing }

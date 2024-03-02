@@ -1,5 +1,7 @@
 import Ts from "rollup-plugin-typescript2"
 import terser from "@rollup/plugin-terser"
+import { uglify } from "rollup-plugin-uglify"
+const gzipPlugin = require("rollup-plugin-gzip").default
 
 const config = {
   input: [
@@ -19,13 +21,20 @@ const config = {
   ],
   output: [
     {
-      dir: "lib",
+      dir: "lib/src",
       format: "esm",
       sourcemap: true,
       preserveModules: true,
     },
   ],
-  plugins: [Ts(), terser()],
+  plugins: [
+    Ts({
+      exclude: ["src/**/**/*.stories.tsx", "src/**/**/*.test.tsx"],
+    }),
+    terser(),
+    uglify(),
+    gzipPlugin(),
+  ],
   external: ["react"],
 }
 
